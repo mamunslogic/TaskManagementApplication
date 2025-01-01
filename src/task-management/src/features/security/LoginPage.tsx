@@ -6,7 +6,7 @@ interface FormValues {
   password: string;
 }
 
-const Login = () => {
+const LoginPage = () => {
   const {
     register,
     handleSubmit,
@@ -80,4 +80,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;

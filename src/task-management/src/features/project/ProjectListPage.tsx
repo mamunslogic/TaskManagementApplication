@@ -1,9 +1,9 @@
 import { useState } from "react";
 import useFetch from "../../hooks/UseFetch";
 import { Project } from "../../types/Project";
-import CreateProject from "./CreateProject";
+import CreateProject from "./CreateProjectPage";
 
-const ProjectList = () => {
+const ProjectListPage = () => {
   const { data, error, loading } = useFetch<Project[]>(
     "https://localhost:7069/api/Task/GetProjects"
   );
@@ -39,4 +39,4 @@ const ProjectList = () => {
   );
 };
 
-export default ProjectList;
+export default ProjectListPage;

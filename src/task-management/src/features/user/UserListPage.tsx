@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { User } from "../../types/User";
 
-const UserList = () => {
+const UserListPage = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -42,4 +42,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default UserListPage;

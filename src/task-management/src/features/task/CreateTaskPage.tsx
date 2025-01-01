@@ -1,4 +1,4 @@
-const CreateTask = () => {
+const CreateTaskPage = () => {
   return (
     <>
       <div className="flex justify-center my-4">
@@ -57,4 +57,4 @@ const CreateTask = () => {
   );
 };
 
-export default CreateTask;
+export default CreateTaskPage;

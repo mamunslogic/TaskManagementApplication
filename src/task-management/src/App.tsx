@@ -1,22 +1,27 @@
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import "./App.css";
-import CreateProject from "./features/project/CreateProject";
-import ProjectList from "./features/project/ProjectList";
-import UserList from "./features/user/UserList";
-import UserRegistration from "./features/user/UserRegistration";
+import Layout from "./components/Layout";
+import { Suspense } from "react";
+import { CustomRoutes, RouteConfig } from "./components/CustomRoutes";
 
 function App() {
   return (
-    <div className="container mx-auto">
-      <ProjectList />
-    </div>
-    // <div className="w-screen h-screen bg-blue-50 flex justify-center">
-    //   <div className="max-w-md border-2 rounded-md my-20 bg-white opacity-90">
-    //     <div className="bg-green-700 flex rounded shadow text-green-950 px-5 py-5">
-    //       <h1 className="text-3xl font-bold underline">Task Management</h1>
-    //     </div>
-    //     <div>{/* <CreateTask /> */}</div>
-    //   </div>
-    // </div>
+    <BrowserRouter>
+      <Layout>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            {CustomRoutes.map((route: RouteConfig, index: number) => (
+              <Route key={index} path={route.path} element={route.element} />
+            ))}
+            {/* <Route path="/" element={<ProjectListPage />} />
+            <Route path="/project" element={<ProjectListPage />} />
+            <Route path="/task" element={<CreateTaskPage />} />
+            <Route path="/signup" element={<UserRegistrationPage />} />
+            <Route path="/userlist" element={<UserListPage />} /> */}
+          </Routes>
+        </Suspense>
+      </Layout>
+    </BrowserRouter>
   );
 }
 

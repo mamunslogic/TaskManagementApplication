@@ -8,7 +8,7 @@ type Props = {
   projectId: number;
 };
 
-const CreateProject: React.FC<Props> = ({ projectId }) => {
+const CreateProjectPage = ({ projectId }: Props) => {
   const { data, loading, error } = useFetch<Project>(
     `https://localhost:7069/api/Task/GetProjectById?id=${projectId}`
   );
@@ -172,4 +172,4 @@ const CreateProject: React.FC<Props> = ({ projectId }) => {
   );
 };
 
-export default CreateProject;
+export default CreateProjectPage;

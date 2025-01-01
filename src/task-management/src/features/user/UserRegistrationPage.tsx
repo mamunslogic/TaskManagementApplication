@@ -9,7 +9,7 @@ interface FormValues {
   confirmPassword: string;
 }
 
-const UserRegistration = () => {
+const UserRegistrationPage = () => {
   const {
     register,
     handleSubmit,
@@ -195,4 +195,4 @@ const UserRegistration = () => {
   );
 };
 
-export default UserRegistration;
+export default UserRegistrationPage;
